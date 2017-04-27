@@ -18,8 +18,8 @@ namespace Catalogue.Models
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }
         public string ItemPrice { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public string UserID { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

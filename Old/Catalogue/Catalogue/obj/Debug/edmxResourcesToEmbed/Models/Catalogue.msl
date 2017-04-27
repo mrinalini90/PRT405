@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CatalogueModelStoreContainer" CdmEntityContainer="CatalogueEntities">
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="CatalogueModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemPrice" ColumnName="ItemPrice" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CatalogueModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPasssword" ColumnName="UserPasssword" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

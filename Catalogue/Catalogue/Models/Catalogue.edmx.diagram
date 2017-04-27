@@ -4,10 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a5c8b64667414d6887079ad223f46f05" Name="Diagram1">
-        <EntityTypeShape EntityType="CatalogueModel.Item" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CatalogueModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="CatalogueModel.FK__Items__UserID__286302EC" ManuallyRouted="false" />
+      <Diagram DiagramId="9877af880ac84c679a158f90eed4c353" Name="Diagram1">
+        <EntityTypeShape EntityType="CatalogueModel.Item" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CatalogueModel.C__MigrationHistory" Width="1.5" PointX="3" PointY="0.625" />
+        <EntityTypeShape EntityType="CatalogueModel.AspNetRole" Width="1.5" PointX="0.875" PointY="7.875" />
+        <EntityTypeShape EntityType="CatalogueModel.AspNetUserClaim" Width="1.5" PointX="9.75" PointY="7.375" />
+        <EntityTypeShape EntityType="CatalogueModel.AspNetUserLogin" Width="1.5" PointX="6.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CatalogueModel.AspNetUser" Width="1.5" PointX="3" PointY="2.625" />
+        <AssociationConnector Association="CatalogueModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CatalogueModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CatalogueModel.FK__Items__UserID__3F466844" />
+        <AssociationConnector Association="CatalogueModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
