@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Catalogue.Models;
 
 namespace Catalogue.Controllers
 {
     public class HomeController : Controller
     {
-        private CatalogueEntities db = new CatalogueEntities();
-        public ActionResult Index()
+        public ActionResult Product()
         {
             return View();
         }
 
-        public ActionResult Create(Item item)
+        public ActionResult About()
         {
-            if (ModelState.IsValid)
-            {
-                db.Items.Add(item);
-                db.SaveChanges();
-                return RedirectToAction("Create");
-            }
+            ViewBag.Message = "Your application description page.";
 
-            return View(item);
+            return View();
         }
 
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

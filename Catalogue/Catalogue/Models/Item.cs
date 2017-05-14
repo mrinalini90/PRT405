@@ -14,10 +14,10 @@ namespace Catalogue.Models
     
     public partial class Item
     {
-        public int ItemID { get; set; }
-        public string ItemName { get; set; }
-        public string ItemDescription { get; set; }
-        public string ItemPrice { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public Nullable<decimal> Price { get; set; }
         public string UserID { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }

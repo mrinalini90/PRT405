@@ -16,7 +16,7 @@ namespace Catalogue
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Product", action = "Product", id = UrlParameter.Optional }
             );
         }
     }

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{51CC4C64-1E24-46ED-B770-4F3F141D78AA}</ProjectGuid>
+    <ProjectGuid>{C1BF095F-5EF1-4259-91E9-D395467BF86A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -202,88 +202,86 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IProductRepository.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Catalogue.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Catalogue.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Catalogue.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Catalogue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Catalogue.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Catalogue.edmx</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Item.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Item.cs">
-      <DependentUpon>Catalogue.tt</DependentUpon>
+      <DependentUpon>Item.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Item.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Catalogue.Context.tt">
+    <Content Include="Models\Item.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Catalogue.edmx</DependentUpon>
-      <LastGenOutput>Catalogue.Context.cs</LastGenOutput>
+      <DependentUpon>Item.edmx</DependentUpon>
+      <LastGenOutput>Item.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Catalogue.tt">
+    <Content Include="Models\Item.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Catalogue.edmx</DependentUpon>
-      <LastGenOutput>Catalogue.cs</LastGenOutput>
+      <DependentUpon>Item.edmx</DependentUpon>
+      <LastGenOutput>Item1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularJs.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\Catalogue.edmx">
+    <EntityDeploy Include="Models\Item.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Catalogue.Designer.cs</LastGenOutput>
+      <LastGenOutput>Item.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Catalogue.edmx.diagram">
-      <DependentUpon>Catalogue.edmx</DependentUpon>
+    <Content Include="Models\Item.edmx.diagram">
+      <DependentUpon>Item.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
@@ -332,10 +330,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\List\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -371,9 +370,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51444</DevelopmentServerPort>
+          <DevelopmentServerPort>51325</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51444/</IISUrl>
+          <IISUrl>http://localhost:51325/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
