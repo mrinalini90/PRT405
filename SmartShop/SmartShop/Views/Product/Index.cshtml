@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Scripts.Render("~/bundles/angularJs")
+<style>
+    table, tr, td, th {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+
+<div data-ng-app="SmartShopModule">
+   
+    <div class="row">
+    <h2>Welcome</h2>
+    <a class="btn-floating btn-large waves-effect right waves-light teal" data-toggle="modal" data-target="#myModal" ><i class="material-icons">add</i></a>
+        </div>
+    <div id="product" ng-controller="SmartShopController">
+        <ul class="collection" data-ng-repeat="prod in product">
+            <li class="collection-item avatar">
+                <i class="material-icons circle green">folder</i>
+                <span class="title"><b>{{prod.ProductName}}</b></span>
+                <p>AUD{{prod.ProductPrice}} </p>
+                <p>{{prod.ProductDescription}}</p>
+            </li>
+        </ul>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Item</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">perm_identity</i>
+                                    <input id="ProductName" type="text" class="validate" ng-model="ProductName">
+                                    <label for="ProductName">Product Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">perm_identity</i>
+                                    <input id="ProductCategory" type="text" class="validate"  ng-model="ProductCategory">
+                                    <label for="ProductDescription">Product Category</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">perm_identity</i>
+                                    <input id="ProductDescription" type="text" class="validate"  ng-model="ProductDescription">
+                                    <label for="ProductDescription">Product Description</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="ProductPrice" type="text" class="validate"  ng-model="ProductPrice">
+                                    <label for="ProductPrice">Price</label>
+                                </div>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addProduct();">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <style>
+        .modal {
+            background-color: #828282;
+            opacity: 0.8;
+        }
+   
+    </style>   
+</div>
+
+</div>

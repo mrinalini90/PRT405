@@ -25,7 +25,24 @@ namespace Test
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/materialize/css/materialize.css",
+                      "~/Content/site.css",
+                      "~/Content/materialize/font/material-design-icons/ Material-Design-Icons.ttf",
+                      "~/Content/materialize/font/material-design-icons/ Material-Design-Icons.woff",
+                      "~/Content/materialize/font/material-design-icons/ Material-Design-Icons.woff2",
+                      "~/Content/materialize/font/material-design-icons/ Material-Design-Icons.eot"));
+
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                   "~/Scripts/materialize/materialize.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-route.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularControllersJs")
+                .IncludeDirectory("~/Scripts/Controllers", "*.js")
+                .Include("~/Scripts/AngularJs.js")
+                );
         }
     }
 }

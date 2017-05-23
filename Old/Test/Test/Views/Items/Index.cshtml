@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div ng-app="AngularJs" ng-controller="IndexController">
+<input type="text" ng-model="models.helloAngular" />
+<h1>{{models.helloAngular}}</h1>
+</div>       
 <table class="table">
     <tr>
         <th>

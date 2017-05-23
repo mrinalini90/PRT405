@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ViewProduct";
+}
+
+<div class="container" ng-controller="">
+    <form class="col s12"  >
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="ProductName" type="text" class="validate" ng-value="singleProduct.ProductName">
+                <label for="ProductName">Product Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="ProductCategory" type="text" class="validate"  ng-value="singleProduct.ProductCategory">
+                <label for="ProductDescription">Product Category</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="ProductDescription" type="text" class="validate"  ng-value="singleProduct.ProductDescription">
+                <label for="ProductDescription">Product Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="material-icons prefix">lock</i>
+                <input id="ProductPrice" type="text" class="validate"  ng-value="singleProduct.ProductPrice">
+                <label for="ProductPrice">Price</label>
+            </div>
+        </div>
+    </form>
+</div>
