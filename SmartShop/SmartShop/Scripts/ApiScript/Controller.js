@@ -13,6 +13,25 @@
                 });
         };
 
+        $scope.getProductId = function () {
+            var prod = $scope.ProductID;
+            if (prod === null) {
+                debug.WriteLine("Id empty");
+            } else {
+                alert("Id is " + prod);
+            }
+            alert("Id is " + prod);
+        };
+
+        function getProductById(id) {
+            var servCall = SmartShopService.getProduct(id);
+            servCall.then(function (d) {
+                    $scope.product = d.data;
+                },
+                function (error) {
+                    $log.error('Oops! Something went wrong while fetching the Product' + error);
+                });
+        }
 
         $scope.addProduct = function() {
             alert("Added");

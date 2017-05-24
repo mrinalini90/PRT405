@@ -28,7 +28,8 @@ namespace SmartShop
                 "~/Scripts/angular-route.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
-                "~/Scripts/materialize/materialize.js"));
+                "~/Scripts/materialize/materialize.js",
+                "~/Scripts/Custom.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularJs").Include(
                 "~/Scripts/ApiScript/Module.js",
@@ -38,7 +39,9 @@ namespace SmartShop
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/materialize/css/materialize.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css"
+               // "~/Content/bootstrap/'*'.less"
+               ));
         }
     }
 }
