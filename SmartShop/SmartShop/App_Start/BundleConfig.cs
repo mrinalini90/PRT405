@@ -33,6 +33,7 @@ namespace SmartShop
 
             bundles.Add(new ScriptBundle("~/bundles/angularJs").Include(
                 "~/Scripts/ApiScript/Module.js",
+                "~/Scripts/ApiScript/Route.js",
                 "~/Scripts/ApiScript/Service.js",
                 "~/Scripts/ApiScript/Controller.js"));
 

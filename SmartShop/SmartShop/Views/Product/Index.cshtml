@@ -23,7 +23,7 @@
     <div id="product" ng-controller="SmartShopController">
         <ul class="collection" data-ng-repeat="prod in product">
             <li>
-                <a href="#!" class="collection-item"style="height: 80%">
+                <a href="#!" class="collection-item"style="height: 80%" ng-click="getProductId(prod.ProductId)">
                     <div class="row">
                         <div class="col s2">
                            <img src="~/Content/camera.png" alt="" class="circle responsive-img" style="width: 70%"> <!-- notice the "circle" class -->
@@ -87,6 +87,74 @@
                 </div>
             </div>
         </div>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="ViewModal" role="dialog">
+            <div class="modal-dialog">
+    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Item</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s10">
+                                        <i class="material-icons prefix">perm_identity</i>
+                                        <input placeholder="Placeholder" id="UpdateName" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateName" class="validate">
+                                        <label for="ProductName">Name</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s10">
+                                        <i class="material-icons prefix">perm_identity</i>
+                                        <input  placeholder="Placeholder" id="UpdateCategory" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateCategory" class="validate"  >
+                                        <label for="ProductDescription">Category</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s10">
+                                        <i class="material-icons prefix">perm_identity</i>
+                                        <input  placeholder="Placeholder"  id="UpdateDescription" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateDescription"  class="validate">
+                                        <label for="ProductDescription">Description</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s10">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input  placeholder="Placeholder"  id="UpdatePrice" type="text" ng-disabled="disable" required ng-init="disable=true" ng-model="updatePrice" class="validate"   >
+                                        <label for="ProductPrice">Price</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-default right" data-dismiss="modal" ng-show="updateButton" ng-click="updateProduct();">Update</button>
+                            <button type="button" class="btn btn-default right" data-dismiss="modal" ng-show="deleteButton" ng-click="DeleteProduct();">Delete</button>
+                        </div>
+                      
+                    </div>
+                    <div class="modal-footer">
+                       
+                        <div class="fixed-action-btn horizontal">
+                            <a class="btn-floating btn-large red">
+                                <i class="large material-icons">menu</i>
+                            </a>
+                            <ul>
+                                <li><a class="btn-floating red" ng-click="enableEdit();"><i class="material-icons">mode_edit</i></a></li>
+                                <li><a class="btn-floating yellow darken-1" ng-click="enableDelete();"><i class="material-icons">delete</i></a></li>
+                                <li><a class="btn-floating green"><i class="material-icons">file_upload</i></a></li>
+                                <li><a class="btn-floating blue"><i class="material-icons">clear</i></a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <style>
             .modal {
                 background-color: #828282;
@@ -95,5 +163,7 @@
    
         </style>   
     </div>
+    
+    
 
 </div>
