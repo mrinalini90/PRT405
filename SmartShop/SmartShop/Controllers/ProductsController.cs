@@ -25,13 +25,30 @@ namespace SmartShop.Controllers
         [System.Web.Http.Route("api/Products")]
         public HttpResponseMessage GetProducts()
         {
-            var currentUser = "NoUser";
-            if (User.Identity.IsAuthenticated== true)
+            IEnumerable<Product> prod ;
+            var admin = User.Identity.GetUserName();
+            if (admin == "admin@admin.com")
             {
-                currentUser = User.Identity.GetUserId();
+                var currentUser = User.Identity.GetUserId();
+
+                if (User.Identity.IsAuthenticated == true)
+                {
+                    currentUser = User.Identity.GetUserId();
+                }
+
+                prod = Db.Products;
             }
-            
-            var   prod = Db.Products.Where(x => x.UserID == currentUser);
+            else
+            {
+                var currentUser = User.Identity.GetUserId();
+
+                if (User.Identity.IsAuthenticated == true)
+                {
+                    currentUser = User.Identity.GetUserId();
+                }
+
+                prod = Db.Products.Where(x => x.UserID == currentUser);
+            }
             return ToJson(prod.AsEnumerable());
         }
 
@@ -52,17 +69,22 @@ namespace SmartShop.Controllers
 
         // PUT: api/Products/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutProduct(int id, Product product)
+        
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("api/UpdateProduct")]
+        public HttpResponseMessage PutProduct([FromBody] Product product)
         {
+            product.UserID = User.Identity.GetUserId();
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            if (id != product.ProductId)
+            if (product.ProductId != product.ProductId)
             {
-                return BadRequest();
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest,"Product Id is invalid");
             }
+            
 
             Db.Entry(product).State = EntityState.Modified;
 
@@ -72,17 +94,16 @@ namespace SmartShop.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!ProductExists(product.ProductId))
                 {
-                    return NotFound();
+                    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
                 }
                 else
                 {
                     throw;
                 }
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // POST: api/Products
@@ -100,6 +121,8 @@ namespace SmartShop.Controllers
 
         // DELETE: api/Products/5
         [ResponseType(typeof(Product))]
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("api/DeleteProduct/{id:int}")]
         public IHttpActionResult DeleteProduct(int id)
         {
             Product product = Db.Products.Find(id);

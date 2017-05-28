@@ -17,4 +17,18 @@
             });
     };
 
+    this.UpdateProduct = function (prod) {
+        return $http(
+            {
+                method: 'put',
+                data: prod,
+                dataType: 'json',
+                url: 'api/UpdateProduct'
+            });
+    };
+
+    this.DeleteProduct = function (id) {
+        return $http.delete('api/DeleteProduct/'+id);
+    };
+
 }); 

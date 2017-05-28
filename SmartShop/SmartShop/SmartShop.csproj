@@ -284,7 +284,6 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\ApiScript\Controller.js" />
     <Content Include="Scripts\ApiScript\Module.js" />
-    <Content Include="Scripts\ApiScript\Route.js" />
     <Content Include="Scripts\ApiScript\Service.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

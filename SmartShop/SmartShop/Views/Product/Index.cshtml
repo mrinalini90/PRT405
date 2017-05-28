@@ -51,6 +51,11 @@
                         <div class="container">
                             <form class="col s12">
                                 <div class="row">
+                                    <div class="input-field col s10" hidden="hidden">
+                                        <i class="material-icons prefix">perm_identity</i>
+                                        <input id="ProductId" type="text" class="validate" ng-model="ProductId">
+                                        <label for="ProductId">Product Id</label>
+                                    </div>
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">perm_identity</i>
                                         <input id="ProductName" type="text" class="validate" ng-model="ProductName">
@@ -74,7 +79,7 @@
                                 <div class="row">
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">lock</i>
-                                        <input id="ProductPrice" type="text" class="validate"  ng-model="ProductPrice">
+                                        <input id="ProductPrice" type="number" class="validate"  ng-model="ProductPrice">
                                         <label for="ProductPrice">Price</label>
                                     </div>
                                 </div>
@@ -102,37 +107,44 @@
                     <div class="modal-body">
                         <div class="container">
                             <form class="col s12">
+                                  <div class="row" >
+                                    <div class="input-field col s10 hidden">
+                                        <i class="material-icons prefix">perm_identity</i>
+                                        <input placeholder="Placeholder" id="UpdateId" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateId" class="validate">
+                                        <label for="ProductId">Id</label>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">perm_identity</i>
-                                        <input placeholder="Placeholder" id="UpdateName" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateName" class="validate">
+                                        <input placeholder="Placeholder" id="UpdateName" type="text" ng-disabled="disable" required ng-init="disable=true" ng-model="updateName" class="validate">
                                         <label for="ProductName">Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">perm_identity</i>
-                                        <input  placeholder="Placeholder" id="UpdateCategory" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateCategory" class="validate"  >
+                                        <input placeholder="Placeholder" id="UpdateCategory" type="text" ng-disabled="disable" required ng-init="disable=true" ng-model="updateCategory" class="validate">
                                         <label for="ProductDescription">Category</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">perm_identity</i>
-                                        <input  placeholder="Placeholder"  id="UpdateDescription" type="text" ng-disabled="disable" required ng-init="disable=true"  ng-model="updateDescription"  class="validate">
+                                        <input placeholder="Placeholder" id="UpdateDescription" type="text" ng-disabled="disable" required ng-init="disable=true" ng-model="updateDescription" class="validate">
                                         <label for="ProductDescription">Description</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s10">
                                         <i class="material-icons prefix">lock</i>
-                                        <input  placeholder="Placeholder"  id="UpdatePrice" type="text" ng-disabled="disable" required ng-init="disable=true" ng-model="updatePrice" class="validate"   >
+                                        <input placeholder="Placeholder" id="UpdatePrice" type="number" ng-disabled="disable" required ng-init="disable=true" ng-model="updatePrice" class="validate">
                                         <label for="ProductPrice">Price</label>
                                     </div>
                                 </div>
                             </form>
                             <button type="button" class="btn btn-default right" data-dismiss="modal" ng-show="updateButton" ng-click="updateProduct();">Update</button>
-                            <button type="button" class="btn btn-default right" data-dismiss="modal" ng-show="deleteButton" ng-click="DeleteProduct();">Delete</button>
+                            <button type="button" class="btn btn-default right" data-dismiss="modal" ng-show="deleteButton" ng-click="deleteProduct();">Delete</button>
                         </div>
                       
                     </div>
